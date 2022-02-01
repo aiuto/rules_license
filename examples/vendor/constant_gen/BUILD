@@ -1,9 +1,10 @@
 # An example of a code generator with a distinct license for the generated code.
 
-load(":defs.bzl", "constant_gen")
 load("@rules_license//rules:compliance.bzl", "licenses_used")
 load("@rules_license//rules:license.bzl", "license")
 load("@rules_license//tools:test_helpers.bzl", "golden_test")
+load("@rules_python//python:defs.bzl", "py_binary")
+load(":defs.bzl", "constant_gen")
 
 package(
     default_applicable_licenses = [":license"],

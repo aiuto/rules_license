@@ -1,5 +1,7 @@
 """Test cases for license rules."""
 
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
+load("@rules_java//java:defs.bzl", "java_binary", "java_library")
 load("@rules_license//rules:compliance.bzl", "check_license")
 load("@rules_license//rules:license.bzl", "license")
 load("@rules_license//rules:license_kind.bzl", "license_kind")

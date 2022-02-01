@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
 def _constant_gen_impl(ctx):
     # Turn text into a C++ constant.
     outputs = [ctx.outputs.src_out]
@@ -52,7 +54,7 @@ def constant_gen(name, text, var):
     )
 
     # And turn it into a library we can link against
-    native.cc_library(
+    cc_library(
         name = name,
         srcs = [name + "_src_"],
         applicable_licenses = ["@rules_license//examples/vendor/constant_gen:license_for_emitted_code"],
